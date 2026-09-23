@@ -71,17 +71,13 @@ const studentCases: StudentCase[] = [
 .student-cases {
   padding: 0 10px;
   margin-bottom: $margin-bottom;
-  zoom: 1.6;
+  zoom: 1.3;
 
   @media (max-width: 1150px) {
-    zoom: 1.4;
-  }
-
-  @media (max-width: 799px) {
     zoom: 1.2;
   }
 
-  @media (max-width: 639px) {
+  @media (max-width: 799px) {
     zoom: 1;
   }
 
@@ -101,7 +97,7 @@ const studentCases: StudentCase[] = [
     column-gap: 20px;
 
     &:not(:last-child) {
-      margin-bottom: $margin-bottom;
+      margin-bottom: 100px;
     }
 
     @media (max-width: 1499px) {

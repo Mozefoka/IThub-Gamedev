@@ -47,7 +47,7 @@ const games: GameProject[] = [
         <article v-for="game in games" class="games__card" :key="game.id">
           <div class="games__card-header">
             <span class="games__card-number">{{ String(game.id).padStart(2, '0') }}</span>
-            <h3 class="games__card-name title-md">{{ game.name }}</h3>
+            <h3 class="games__card-name">{{ game.name }}</h3>
           </div>
 
           <div class="games__card-video">
@@ -116,7 +116,16 @@ const games: GameProject[] = [
 @use '@/styles/mixins' as *;
 
 .games {
-  @include zoom;
+  zoom: 1.3;
+
+  @media (max-width: 1150px) {
+    zoom: 1.2;
+  }
+
+  @media (max-width: 799px) {
+    zoom: 1;
+  }
+
   margin-bottom: $margin-bottom;
 
   &__title {
@@ -157,6 +166,11 @@ const games: GameProject[] = [
     font-weight: 700;
     font-size: 10px;
     color: $color-gray;
+  }
+
+  &__card-name {
+    font-weight: 700;
+    font-size: clamp(25px, 2vw, 30px);
   }
 
   &__card-video-item {

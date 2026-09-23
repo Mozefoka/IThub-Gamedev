@@ -48,7 +48,7 @@ export const gamedevSuccessStories = [
     photo: images.roman,
     studentName: 'Тимофей Фирсов',
     studentCourse: 'Студент ITHub СПБ, 2 курс',
-    badgeIcon: '/src/assets/icons/success-stories-icon.svg',
+    badgeIcon: icons.successStoriesIcon,
     badgeText: 'Траектория быстрого роста в ITHub',
     description: [
       'Уже на втором курсе Никита стал ведущим маркетологом в Union. Возглавил команду из четырех специалистов!',

@@ -218,11 +218,11 @@ const props = defineProps<Props>()
   }
 
   &__text-subtitle {
-    max-width: 270px;
     font-weight: 700;
     font-size: 20px;
     line-height: 1.2;
     opacity: 0.3;
+    white-space: nowrap;
     text-align: center;
 
     @media (max-width: 439px) {

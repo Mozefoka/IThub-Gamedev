@@ -27,7 +27,7 @@ import { icons, images } from '@/data/images.ts'
       video="https://kinescope.io/tzPFG64ZZrK1wUQWgg4L4m"
     />
     <GameProjects title="Вы только посмотрите на проекты наших ребят" />
-    <StudyProgram :cases="gamedevCases" image="src/assets/images/disc.png" />
+    <StudyProgram :cases="gamedevCases" :image="images.disc" container="wide" />
     <LeadForm title="Готов к карьере в разработке игр?" btn-variant="secondary" />
     <BaseFaq />
   </main>
