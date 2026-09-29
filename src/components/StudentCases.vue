@@ -5,7 +5,7 @@ import { images } from '@/data/images.ts'
 
 interface StudentCase {
   id: number
-  caseTitle: string
+  caseTitles: string[]
   subtitle?: string
   description: string
   images: string[]
@@ -16,7 +16,7 @@ const props = defineProps({ title: String })
 const studentCases: StudentCase[] = [
   {
     id: 1,
-    caseTitle: 'Международный Game Jam от Pirate Software',
+    caseTitles: ['Международный Game', 'Jam от Pirate Software'],
     description:
       'На две недели стены хаба превратились в настоящую геймдев-лабораторию, где команды с нуля создавали рабочие игровые прототипы для отправки на суд мирового жюри. А финалом марафона стал стрим, где преподаватели IThub лично сели тестировать студенческие игры, устроив честный разбор в прямом эфире',
     images: [images.rules, images.team2],
@@ -24,7 +24,7 @@ const studentCases: StudentCase[] = [
 
   {
     id: 2,
-    caseTitle: 'Всероссийская конференция разработчиков игр',
+    caseTitles: ['Всероссийская конференция разработчиков игр'],
     subtitle:
       'Ассистенты кафедры вместе со студентами пришли на Всероссийскую конференцию гейм-разработчиков',
     description:
@@ -36,11 +36,11 @@ const studentCases: StudentCase[] = [
 
 <template>
   <section class="student-cases">
-    <h2 class="student-cases__title title-lg">{{ props.title }}</h2>
+    <h2 class="student-cases__title title-md">{{ props.title }}</h2>
 
     <article v-for="studentCase in studentCases" class="student-cases__card" :key="studentCase.id">
       <div class="student-cases__card-text">
-        <h3 class="student-cases__card-title title-md">{{ studentCase.caseTitle }}</h3>
+        <h3 class="student-cases__card-title title-md"><span v-for="(title, index) in studentCase.caseTitles" :key="index">{{ title }}</span></h3>
         <p v-if="studentCase.subtitle" class="student-cases__card-subtitle">
           {{ studentCase.subtitle }}
         </p>
@@ -82,14 +82,14 @@ const studentCases: StudentCase[] = [
   }
 
   &__title {
-    max-width: 660px;
+    max-width: 425px;
     margin: 0 auto 50px auto;
     text-align: center;
   }
 
   &__card {
     display: grid;
-    grid-template-columns: minmax(0, 570px) minmax(0, 430px);
+    grid-template-columns: minmax(0, 570px) minmax(0, 500px);
     grid-template-areas:
       'text slider'
       'benefits slider';
@@ -101,7 +101,15 @@ const studentCases: StudentCase[] = [
     }
 
     @media (max-width: 1499px) {
-      grid-template-columns: minmax(0, 570px) minmax(0, 360px);
+      grid-template-columns: minmax(0, 570px) minmax(0, 440px);
+    }
+
+    @media (max-width: 1299px) {
+      grid-template-columns: minmax(0, 500px) minmax(0, 400px);
+    }
+
+    @media (max-width: 1099px) {
+      grid-template-columns: minmax(0, 500px) minmax(0, 360px);
     }
 
     @media (max-width: 959px) {
@@ -125,6 +133,10 @@ const studentCases: StudentCase[] = [
         'text'
         'slider'
         'benefits';
+    }
+
+    span {
+      display: block;
     }
   }
 

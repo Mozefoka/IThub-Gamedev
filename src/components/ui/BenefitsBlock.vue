@@ -49,7 +49,7 @@ const props = withDefaults(defineProps<Benefits>(), {
         width: 570px;
       }
 
-      @media (max-width: 959px) {
+      @media (max-width: 1379px) {
         width: 500px;
       }
 

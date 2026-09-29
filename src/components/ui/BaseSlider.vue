@@ -70,6 +70,14 @@ const nextSlide = () => {
   display: flex;
   align-items: center;
 
+  @media (max-width: 959px) {
+    max-width: 440px;
+  }
+
+  @media (max-width: 639px) {
+    max-width: 100%;
+  }
+
   &__swiper {
     width: 100%;
     border-radius: 15px;
