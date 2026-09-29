@@ -85,6 +85,10 @@ const props = defineProps<Cyberhub>()
     @media (max-width: 759px) {
       width: 500px;
     }
+
+    @media (max-width: 499px) {
+      max-width: 450px;
+    }
   }
 
   &__preview-image {
@@ -110,9 +114,8 @@ const props = defineProps<Cyberhub>()
     }
 
     @media (max-width: 499px) {
-      max-width: 274px;
-      height: 156px;
-      left: 49.6%;
+      max-width: 247px;
+      height: 140px;
     }
   }
 }
