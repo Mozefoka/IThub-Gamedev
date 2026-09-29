@@ -170,8 +170,8 @@ const props = defineProps<Props>()
   }
 
   &__main-image {
-    margin-top: -100px;
-    margin-bottom: -25px;
+    margin-top: -130px;
+    margin-bottom: 10px;
     transform: rotate(-10deg);
     z-index: 2;
 
