@@ -5,7 +5,7 @@ import { images } from '@/data/images.ts'
 
 interface StudentCase {
   id: number
-  caseTitles: string[]
+  caseTitle: string
   subtitle?: string
   description: string
   images: string[]
@@ -16,7 +16,7 @@ const props = defineProps({ title: String })
 const studentCases: StudentCase[] = [
   {
     id: 1,
-    caseTitles: ['Международный Game', 'Jam от Pirate Software'],
+    caseTitle: 'Международный Game\nJam от Pirate Software',
     description:
       'На две недели стены хаба превратились в настоящую геймдев-лабораторию, где команды с нуля создавали рабочие игровые прототипы для отправки на суд мирового жюри. А финалом марафона стал стрим, где преподаватели IThub лично сели тестировать студенческие игры, устроив честный разбор в прямом эфире',
     images: [images.rules, images.team2],
@@ -24,7 +24,7 @@ const studentCases: StudentCase[] = [
 
   {
     id: 2,
-    caseTitles: ['Всероссийская конференция разработчиков игр'],
+    caseTitle: 'Всероссийская конференция разработчиков игр',
     subtitle:
       'Ассистенты кафедры вместе со студентами пришли на Всероссийскую конференцию гейм-разработчиков',
     description:
@@ -40,7 +40,7 @@ const studentCases: StudentCase[] = [
 
     <article v-for="studentCase in studentCases" class="student-cases__card" :key="studentCase.id">
       <div class="student-cases__card-text">
-        <h3 class="student-cases__card-title title-md"><span v-for="(title, index) in studentCase.caseTitles" :key="index">{{ title }}</span></h3>
+        <h3 class="student-cases__card-title title-md">{{ studentCase.caseTitle }}</h3>
         <p v-if="studentCase.subtitle" class="student-cases__card-subtitle">
           {{ studentCase.subtitle }}
         </p>
@@ -143,6 +143,10 @@ const studentCases: StudentCase[] = [
   &__card-text {
     grid-area: text;
     margin-bottom: 30px;
+  }
+
+  &__card-title {
+    white-space: pre-line;
   }
 
   &__card-subtitle {
