@@ -247,7 +247,7 @@ const headlineStyle = (index: number) => {
             </h2>
 
             <h3
-              class="success-stories__stage-title title-lg"
+              class="success-stories__stage-title"
             >
               {{ story.cardTitle }}
             </h3>
@@ -442,6 +442,17 @@ const headlineStyle = (index: number) => {
       font-weight: 400;
       opacity: 1;
     }
+  }
+
+  &__stage-title {
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 35px;
+
+      @media (max-width: 959px) {
+        font-size: 25px;
+        line-height: 25px;
+      }
   }
 
   &__headlines {
