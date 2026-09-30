@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import BaseBadge from '@/components/ui/BaseBadge.vue'
-import { images, icons } from '@/data/images.ts'
 
 interface SuccessStory {
   id: number
@@ -15,53 +14,11 @@ interface SuccessStory {
 }
 
 interface Props {
+  cards: SuccessStory[]
   title?: string
   active?: boolean
   star?: string
 }
-
-const cards: SuccessStory[] = [
-  {
-    id: 1,
-    cardTitle: 'Трудоустроился на 2 курсе',
-    photo: images.roman,
-    studentName: 'Никита Барановский',
-    studentCourse: 'Студент ITHub СПБ, 2 курс',
-    badgeIcon: icons.successStoriesIcon,
-    badgeText: 'Траектория быстрого роста в ITHub',
-    description: [
-      'Уже на втором курсе Никита стал ведущим маркетологом в Union. Возглавил команду из четырех специалистов!',
-      'Во время учебы он решал реальные задачи, участвовал в коммерческих проектах и прокачивался на бизнес-играх в ITHUB',
-    ],
-  },
-
-  {
-    id: 2,
-    cardTitle: 'Стала призёром международного конкурса',
-    photo: images.roman,
-    studentName: 'Анастасия Акчурина',
-    studentCourse: 'Студентка ITHub СПБ, 2 курс',
-    badgeIcon: icons.successStoriesIcon,
-    badgeText: 'В ITHub теория мгновенно переходит в практику',
-    description: [
-      'Настя заняла 3-е место на международном конкурсе рекламы «Золотой колос». С проектом, который родился на бизнес-игре в IThub — там она вместе с командой прошла путь от идеи продукта до готовой стратегии продвижения',
-    ],
-  },
-
-  {
-    id: 3,
-    cardTitle: 'Трудоустроился на 2 курсе',
-    photo: images.roman,
-    studentName: 'Никита Барановский',
-    studentCourse: 'Студент ITHub СПБ, 2 курс',
-    badgeText:
-      'Преподаватели ITHub дают студентам возможность работать с реальными бюджетами',
-    description: [
-      'Уже на втором курсе Никита стал ведущим маркетологом в Union. Возглавил команду из четырех специалистов!',
-      'Во время учебы он решал реальные задачи, участвовал в коммерческих проектах и прокачивался на бизнес-играх в ITHUB',
-    ],
-  },
-]
 
 const props = withDefaults(defineProps<Props>(), {
   title: 'Истории успеха',
@@ -80,7 +37,7 @@ const TITLE_DRIFT = 80
 
 const WHEEL_RADIUS = 1000
 
-const lastIndex = cards.length - 1
+const lastIndex = props.cards.length - 1
 
 const pinLength =
   lastIndex * TRAVEL +
@@ -457,9 +414,9 @@ const headlineStyle = (index: number) => {
 
   &__headlines {
     position: absolute;
-    top: 0;
+    top: 60px;
     left: 0;
-    z-index: 3;
+    z-index: 0;
     width: 100%;
     height: var(--card-top);
     pointer-events: none;

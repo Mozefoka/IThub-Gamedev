@@ -44,7 +44,7 @@ export const gamedevCases = [
 export const gamedevSuccessStories = [
   {
     id: 1,
-    cardTitle: 'Прошёл 6 хакатонов и разработал игру на первом курсе',
+    cardTitle: 'Прошёл 6 хакатонов и разработал\nигру на первом курсе',
     photo: images.roman,
     studentName: 'Тимофей Фирсов',
     studentCourse: 'Студент ITHub СПБ, 2 курс',
@@ -58,7 +58,7 @@ export const gamedevSuccessStories = [
 
   {
     id: 2,
-    cardTitle: 'Стала призёром международного конкурса',
+    cardTitle: 'Стала амбассадором и лидером\nкоманды на турнирах',
     photo: images.roman,
     studentName: 'Камилла Железнякова',
     studentCourse: 'Студентка ITHub СПБ, 2 курс',
