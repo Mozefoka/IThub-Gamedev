@@ -19,7 +19,7 @@ import { icons, images } from '@/data/images.ts'
       :main-image="images.gamepad"
       star="primary"
     />
-    <SuccessStories :cards="gamedevSuccessStories" />
+    <SuccessStories :cards="gamedevSuccessStories" :star="icons.longStar" />
     <StudentCases title="Почему у наших студентов получается" />
     <CyberHub
       title="CyberHub: мечта студентов сбылась"

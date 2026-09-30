@@ -247,7 +247,7 @@ const headlineStyle = (index: number) => {
             </h2>
 
             <h3
-              class="success-stories__stage-title title-md"
+              class="success-stories__stage-title title-lg"
             >
               {{ story.cardTitle }}
             </h3>
@@ -343,7 +343,7 @@ const headlineStyle = (index: number) => {
 
   --viewport-height: 100dvh;
 
-  --card-top: 150px;
+  --card-top: 100px;
   --fade-window: 360px;
 
   position: relative;
@@ -407,7 +407,7 @@ const headlineStyle = (index: number) => {
     overflow: hidden;
     background: radial-gradient(
       ellipse 100% 50% at 50% 50%,
-      rgba(142, 66, 235, 0.6) 0%,
+      rgba(142, 66, 235, 0.6) 20%,
       rgba(142, 66, 235, 0.25) 40%,
       transparent 70%
     );
@@ -442,11 +442,6 @@ const headlineStyle = (index: number) => {
       font-weight: 400;
       opacity: 1;
     }
-  }
-
-  &__stage-title {
-    max-width: 555px;
-    margin: 0 auto;
   }
 
   &__headlines {
@@ -559,8 +554,8 @@ const headlineStyle = (index: number) => {
 
   &__card-photo {
     width: 100%;
-    max-width: 300px;
-    height: 300px;
+    max-width: 350px;
+    height: 350px;
 
     img {
       width: 100%;
