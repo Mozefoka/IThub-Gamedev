@@ -471,7 +471,6 @@ onBeforeUnmount(() => {
     font-weight: 700;
     font-size: clamp(20px, 2vw, 29px);
     line-height: clamp(25px, 2vw, 35px);
-    white-space: nowrap;
     margin-bottom: 20px;
 
     @media (max-width: 1199px) {

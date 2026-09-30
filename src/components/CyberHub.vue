@@ -71,7 +71,7 @@ const props = defineProps<Cyberhub>()
   }
 
   &__description {
-    max-width: 500px;
+    max-width: 420px;
     font-size: clamp(12px, 1vw, 14px);
     line-height: 15px;
     margin-bottom: 10px;
