@@ -414,7 +414,7 @@ const headlineStyle = (index: number) => {
 
   &__headlines {
     position: absolute;
-    top: 60px;
+    top: 50px;
     left: 0;
     z-index: 0;
     width: 100%;
@@ -524,6 +524,10 @@ const headlineStyle = (index: number) => {
     width: 100%;
     max-width: 350px;
     height: 350px;
+
+      @media (max-width: 639px) {
+        height: 330px;
+      }
 
     img {
       width: 100%;
