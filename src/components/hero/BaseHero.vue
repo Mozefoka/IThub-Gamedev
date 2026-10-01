@@ -60,7 +60,27 @@ const props = defineProps<Props>()
 @use '@/styles/mixins' as *;
 
 .hero {
-  @include zoom;
+  zoom: 1.6;
+
+  @media (max-width: 1429px) {
+    zoom: 1.3;
+  }
+
+  @media (max-width: 1150px) {
+    zoom: 1.2;
+  }
+
+  @media (max-width: 959px) {
+    zoom: 1.4;
+  }
+
+  @media (max-width: 769px) {
+    zoom: 1.3;
+  }
+
+  @media (max-width: 675px) {
+    zoom: 1.2;
+  }
 
   position: relative;
   overflow: hidden;
@@ -94,11 +114,15 @@ const props = defineProps<Props>()
     }
 
     @media (max-width: 639px) {
-      max-width: 300px;
+      max-width: 200px;
+    }
+
+    @media (max-width: 599px) {
+      max-width: 250px;
     }
 
     @media (max-width: 549px) {
-      max-width: 250px;
+      max-width: 200px;
     }
 
     &--primary {
@@ -112,7 +136,7 @@ const props = defineProps<Props>()
       }
 
       @media (max-width: 599px) {
-        right: 150px;
+        right: 120px;
       }
 
       @media (max-width: 499px) {
@@ -167,6 +191,15 @@ const props = defineProps<Props>()
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media (max-width: 769px) {
+      padding-bottom: 50px;
+    }
+
+    @media (max-width: 675px) {
+      padding-bottom: 70px;
+    }
+
   }
 
   &__main-image {
@@ -215,6 +248,10 @@ const props = defineProps<Props>()
     flex-direction: column;
     align-items: center;
     gap: 20px;
+
+      @media (max-width: 639px) {
+        gap: 50px;
+      }
   }
 
   &__text-subtitle {
@@ -233,8 +270,12 @@ const props = defineProps<Props>()
   &__title-img {
     width: 535px;
 
+    @media (max-width: 599px) {
+      width: 400px;
+    }
+
     @media (max-width: 539px) {
-      width: 450px;
+
     }
 
     @media (max-width: 439px) {
