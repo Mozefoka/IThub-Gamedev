@@ -298,7 +298,7 @@ const headlineStyle = (index: number) => {
   --zoom-height: 1.6;
   --zoom: min(var(--zoom-width), var(--zoom-height));
 
-  --viewport-height: 100dvh;
+  --viewport-height: 100vh;
 
   --card-top: 100px;
   --fade-window: 360px;
@@ -308,8 +308,8 @@ const headlineStyle = (index: number) => {
   background-color: $color-black;
   margin-bottom: $margin-bottom;
 
-  @supports (height: 100dvh) {
-    --viewport-height: 100dvh;
+  @supports (height: 100vh) {
+    --viewport-height: 100vh;
   }
 
   @media (max-width: 1150px) {
@@ -361,7 +361,6 @@ const headlineStyle = (index: number) => {
     width: calc(100% / var(--zoom));
     height: calc(var(--viewport-height) / var(--zoom));
     margin: 0 auto;
-    overflow: hidden;
     background: radial-gradient(
       ellipse 100% 50% at 50% 50%,
       rgba(142, 66, 235, 0.6) 20%,
@@ -420,6 +419,10 @@ const headlineStyle = (index: number) => {
     width: 100%;
     height: var(--card-top);
     pointer-events: none;
+
+    @media (max-width: 639px) {
+      top: 44px;
+    }
   }
 
   &__headline {
@@ -525,9 +528,11 @@ const headlineStyle = (index: number) => {
     max-width: 350px;
     height: 350px;
 
-      @media (max-width: 639px) {
-        height: 330px;
-      }
+    @media (max-width: 639px) {
+      max-width: 300px;
+      height: 300px;
+      margin-bottom: 30px;
+    }
 
     img {
       width: 100%;
@@ -550,9 +555,9 @@ const headlineStyle = (index: number) => {
     background-color: $color-dark;
     text-align: center;
 
-      @media (max-width: 639px) {
-        top: -100px;
-      }
+    @media (max-width: 639px) {
+      top: -120px;
+    }
 
     @media (max-width: 500px) {
       max-width: 290px;
